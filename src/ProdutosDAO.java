@@ -18,11 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class ProdutosDAO {
-<<<<<<< Updated upstream
-    //listagemVIEW lv = new listagemVIEW();
-=======
    
->>>>>>> Stashed changes
     Connection conn;
     PreparedStatement prep;
     ResultSet rs;
@@ -36,15 +32,7 @@ public class ProdutosDAO {
         prep.setInt(2, produto.getValor());
         prep.setString(3, produto.getStatus());
         prep.execute();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        JOptionPane.showMessageDialog(null,"Valores Gravados com sucesso!");
-=======
         JOptionPane.showMessageDialog(null,"Valores Gravados com Sucesso!");
->>>>>>> Stashed changes
-=======
-        JOptionPane.showMessageDialog(null,"Valores Gravados com Sucesso!");
->>>>>>> Stashed changes
         
         }catch(Exception e){}
     }
@@ -68,27 +56,7 @@ public class ProdutosDAO {
         }catch(SQLException e){
             throw e;
         }
-<<<<<<< Updated upstream
-        
-        /**String colunas[] = {"id", "Nome", "Valor", "Status"};
-        String dados[][] = new String[listagem.size()][colunas.length];
-         int i=0;
-        
-        for(ProdutosDTO l: listagem){
-            dados[i] = new String[]{
-                String.valueOf(l.getId()),
-                String.valueOf(l.getNome()),
-                String.valueOf(l.getValor()),
-                String.valueOf(l.getStatus())
-            };
-                    i++;
-        }
-        DefaultTableModel tabelaModelo = new DefaultTableModel(dados, colunas);
-        lv.listaProdutos.setModel(tabelaModelo);
-    **/
-=======
        
->>>>>>> Stashed changes
         return listagem;
     }
 
