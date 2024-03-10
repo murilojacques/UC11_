@@ -23,7 +23,11 @@ public class conectaDAO {
         try {
             String url = "jdbc:mysql://localhost/UC11";
             String user ="root";
+<<<<<<< Updated upstream
             String password ="";
+=======
+            String password ="Mu2006_jf";
+>>>>>>> Stashed changes
             conn = DriverManager.getConnection(url, user, password);
             
         } catch (SQLException erro){

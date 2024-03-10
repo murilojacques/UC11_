@@ -12,14 +12,16 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 
 public class ProdutosDAO {
-    
+    //listagemVIEW lv = new listagemVIEW();
     Connection conn;
     PreparedStatement prep;
-    ResultSet resultset;
+    ResultSet rs;
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
     
     public void cadastrarProduto (ProdutosDTO produto){
@@ -30,13 +32,51 @@ public class ProdutosDAO {
         prep.setInt(2, produto.getValor());
         prep.setString(3, produto.getStatus());
         prep.execute();
+<<<<<<< Updated upstream
         JOptionPane.showMessageDialog(null,"Valores Gravados com sucesso!");
+=======
+        JOptionPane.showMessageDialog(null,"Valores Gravados com Sucesso!");
+>>>>>>> Stashed changes
         
         }catch(Exception e){}
     }
     
-    public ArrayList<ProdutosDTO> listarProdutos(){
+    public ArrayList<ProdutosDTO> listarProdutos() throws SQLException{
+        try{
+        String q = "SELECT id, nome, valor, status FROM produtos";
+        conn = new conectaDAO().connectDB();
+        prep = conn.prepareStatement(q);
+        rs = prep.executeQuery();
+        while (rs.next()){
+            ProdutosDTO p = new ProdutosDTO();
+             p.setId( rs.getInt("id"));
+             p.setNome(rs.getString("nome"));
+             p.setValor(rs.getInt("valor"));
+             p.setStatus(rs.getString("status"));
+             System.out.println(p);
+             listagem.add(p);
+  
+        }
+        }catch(SQLException e){
+            throw e;
+        }
         
+        /**String colunas[] = {"id", "Nome", "Valor", "Status"};
+        String dados[][] = new String[listagem.size()][colunas.length];
+         int i=0;
+        
+        for(ProdutosDTO l: listagem){
+            dados[i] = new String[]{
+                String.valueOf(l.getId()),
+                String.valueOf(l.getNome()),
+                String.valueOf(l.getValor()),
+                String.valueOf(l.getStatus())
+            };
+                    i++;
+        }
+        DefaultTableModel tabelaModelo = new DefaultTableModel(dados, colunas);
+        lv.listaProdutos.setModel(tabelaModelo);
+    **/
         return listagem;
     }
     
