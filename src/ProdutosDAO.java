@@ -18,7 +18,11 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class ProdutosDAO {
+<<<<<<< Updated upstream
     //listagemVIEW lv = new listagemVIEW();
+=======
+   
+>>>>>>> Stashed changes
     Connection conn;
     PreparedStatement prep;
     ResultSet rs;
@@ -33,7 +37,11 @@ public class ProdutosDAO {
         prep.setString(3, produto.getStatus());
         prep.execute();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         JOptionPane.showMessageDialog(null,"Valores Gravados com sucesso!");
+=======
+        JOptionPane.showMessageDialog(null,"Valores Gravados com Sucesso!");
+>>>>>>> Stashed changes
 =======
         JOptionPane.showMessageDialog(null,"Valores Gravados com Sucesso!");
 >>>>>>> Stashed changes
@@ -60,6 +68,7 @@ public class ProdutosDAO {
         }catch(SQLException e){
             throw e;
         }
+<<<<<<< Updated upstream
         
         /**String colunas[] = {"id", "Nome", "Valor", "Status"};
         String dados[][] = new String[listagem.size()][colunas.length];
@@ -77,11 +86,26 @@ public class ProdutosDAO {
         DefaultTableModel tabelaModelo = new DefaultTableModel(dados, colunas);
         lv.listaProdutos.setModel(tabelaModelo);
     **/
+=======
+       
+>>>>>>> Stashed changes
         return listagem;
+    }
+
+    void venderProduto(int parseInt) throws SQLException {
+        try{
+        conn = new conectaDAO().connectDB();
+        prep = conn.prepareStatement("UPDATE produtos SET status = 'Vendido' WHERE id = ?");
+        prep.setInt(1, parseInt);
+        prep.execute();
+        JOptionPane.showMessageDialog(null,"Objeto Vendido com Sucesso!");
+        }catch(SQLException e){
+            throw e;
+        }
     }
     
     
-    
+   
         
 }
 
