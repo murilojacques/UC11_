@@ -24,7 +24,11 @@ public class conectaDAO {
             String url = "jdbc:mysql://localhost/UC11";
             String user ="root";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             String password ="";
+=======
+            String password ="Mu2006_jf";
+>>>>>>> Stashed changes
 =======
             String password ="Mu2006_jf";
 >>>>>>> Stashed changes

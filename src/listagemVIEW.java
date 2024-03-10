@@ -1,6 +1,12 @@
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< Updated upstream
+=======
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> Stashed changes
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -159,13 +165,17 @@ public class listagemVIEW extends javax.swing.JFrame {
         
         ProdutosDAO produtosdao = new ProdutosDAO();
         
-        //produtosdao.venderProduto(Integer.parseInt(id));
+        try {
+            produtosdao.venderProduto(Integer.parseInt(id));
+        } catch (SQLException ex) {
+            Logger.getLogger(listagemVIEW.class.getName()).log(Level.SEVERE, null, ex);
+        }
         listarProdutos();
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
-        //vendasVIEW vendas = new vendasVIEW(); 
-        //vendas.setVisible(true);
+        vendasVIEW vendas = new vendasVIEW(); 
+        vendas.setVisible(true);
     }//GEN-LAST:event_btnVendasActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -231,6 +241,7 @@ public class listagemVIEW extends javax.swing.JFrame {
             
             ArrayList<ProdutosDTO> listagem = produtosdao.listarProdutos();
            
+<<<<<<< Updated upstream
             /**String colunas[] = {"id", "Nome", "Valor", "Status"};
         String dados[][] = new String[listagem.size()][colunas.length];
          int i=0;
@@ -249,6 +260,8 @@ public class listagemVIEW extends javax.swing.JFrame {
          **/   
             
         
+=======
+>>>>>>> Stashed changes
              for(int i = 0; i < listagem.size(); i++){
                 model.addRow(new Object[]{
                     listagem.get(i).getId(),
