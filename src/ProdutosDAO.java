@@ -73,6 +73,7 @@ public class ProdutosDAO {
     }
     
     
+<<<<<<< HEAD
     public ArrayList<ProdutosDTO> listarProdutosVendidos() throws SQLException{
         try{
         String q = "SELECT id, nome, valor, status FROM produtos WHERE status = 'Vendido'";
@@ -95,6 +96,9 @@ public class ProdutosDAO {
        
         return listagem;
     }
+=======
+   
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
         
 }
 

@@ -171,12 +171,16 @@ public class listagemVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
+<<<<<<< HEAD
         vendasVIEW vendas = null; 
         try {
             vendas = new vendasVIEW();
         } catch (SQLException ex) {
             Logger.getLogger(listagemVIEW.class.getName()).log(Level.SEVERE, null, ex);
         }
+=======
+        vendasVIEW vendas = new vendasVIEW(); 
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
         vendas.setVisible(true);
     }//GEN-LAST:event_btnVendasActionPerformed
 

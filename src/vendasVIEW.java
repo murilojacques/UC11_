@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -5,6 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
+=======
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -19,9 +22,14 @@ public class vendasVIEW extends javax.swing.JFrame {
     /**
      * Creates new form vendasVIEW
      */
+<<<<<<< HEAD
     public vendasVIEW() throws SQLException {
         initComponents();
         listarVendas();
+=======
+    public vendasVIEW() {
+        initComponents();
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
     }
 
     /**
@@ -132,11 +140,15 @@ public class vendasVIEW extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+<<<<<<< HEAD
                 try {
                     new vendasVIEW().setVisible(true);
                 } catch (SQLException ex) {
                     Logger.getLogger(vendasVIEW.class.getName()).log(Level.SEVERE, null, ex);
                 }
+=======
+                new vendasVIEW().setVisible(true);
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
             }
         });
     }
@@ -147,6 +159,7 @@ public class vendasVIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
      
     private void listarVendas() throws SQLException{
         try {
@@ -171,4 +184,6 @@ public class vendasVIEW extends javax.swing.JFrame {
             throw e;
         }
     }
+=======
+>>>>>>> 84c3a369811a9087356ae30e0bcaab73d64b9c5d
 }
